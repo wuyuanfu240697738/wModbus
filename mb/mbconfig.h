@@ -37,7 +37,7 @@ PR_BEGIN_EXTERN_C
 #define MB_ADDRESS_MIN          				( 1  )
 #define MB_ADDRESS_MAX          				( 247)  
 
-#define MB_MASTER_ENABLED                       MBENABLED
+#define MB_MASTER_ENABLED                       MBDISABLED
 #define MB_SLAVE_ENABLED                        MBENABLED
 
 #define MB_TCP_ENABLED                          MBENABLED
