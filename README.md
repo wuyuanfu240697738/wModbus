@@ -3,7 +3,7 @@ Copyright   : Wu YuanFu. All rights reserved.Protected by international copyrigh
 Programmer  : Wu YuanFu
 Version     : V2.50
 LICENSING TERMS:
-wModbus is provided in source form for FREE short-term evaluation, for educational use or for peaceful research.  If you plan or intend to use wModbus in a commercial application/ product then, you need to contact Wu YuanFu<240697738@qq.com> to properly license wModbus for its use in your application/product. The fact that the source is provided does NOT mean that you can use it commercially without paying a licensing fee.Knowledge of the source code may NOT be used to develop a similar product.
+wModbus is provided in source form for FREE short-term evaluation, for educational use or for peaceful research.  If you plan or intend to use wModbus in a commercial application/ product then, you need to contact Wu YuanFu <240697738@qq.com> to properly license wModbus for its use in your application/product. The fact that the source is provided does NOT mean that you can use it commercially without paying a licensing fee.Knowledge of the source code may NOT be used to develop a similar product.
 
 本说明书所包含的内容为发明人吴远福提供，其内容会根据硬件的改进和软件的升级进行更新，所有更新的内容都将纳入到新版本的手册中。
 版权所有，保留所有权利。
