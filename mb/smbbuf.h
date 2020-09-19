@@ -1,4 +1,4 @@
-
+Ôªø
 
 /*
 ********************************************************************************************************
@@ -40,13 +40,13 @@ MB_Exception MB_GetBufs(USHORT addr,USHORT* dst,USHORT num);
 MB_Exception MB_SetBuf(USHORT addr,USHORT dst);
 USHORT MB_GetBuf(USHORT addr);
 
-    #define sMB_HOLDING_START 	                0x1000      //HOLDING∆ ºµÿ÷∑
+    #define sMB_HOLDING_START 	                0x1000      //HOLDINGËµ∑ÂßãÂú∞ÂùÄ
     #define sMB_HOLDING_NREGS 	                512  
-    #define sMB_INPUT_START 	                0x9000      //INPUT∆ ºµÿ÷∑
+    #define sMB_INPUT_START 	                0x9000      //INPUTËµ∑ÂßãÂú∞ÂùÄ
     #define sMB_INPUT_NREGS 	                16
-    #define sMB_COILS_START 	                0x0500      //COILS∆ ºµÿ÷∑
+    #define sMB_COILS_START 	                0x0500      //COILSËµ∑ÂßãÂú∞ÂùÄ
     #define sMB_COILS_NREGS 	                64 
-    #define sMB_DISCRETE_START 	                0x0400      //DISCRETE∆ ºµÿ÷∑
+    #define sMB_DISCRETE_START 	                0x0400      //DISCRETEËµ∑ÂßãÂú∞ÂùÄ
     #define sMB_DISCRETE_NREGS 	                64
     
 #endif

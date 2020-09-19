@@ -1,4 +1,4 @@
-/*
+ï»¿/*
 ********************************************************************************************************
 *                                                wModbus
 *                                 The Embedded Modbus Stack Software
@@ -26,11 +26,11 @@
 
 #if ( MB_SLAVE_ENABLED== MBENABLED )
 
-	#define sMB_HoldingBuf_Addr 	0                                                       //ÊıÁ¿Îª   sMB_HOLDING_NREGS
-	#define sMB_InputBuf_Addr 	    (sMB_HoldingBuf_Addr + sMB_HOLDING_NREGS)               //ÊıÁ¿Îª   sMB_INPUT_NREGS
-	#define sMB_CoilsBuf_Addr 	    (sMB_InputBuf_Addr + sMB_INPUT_NREGS)                   //ÊıÁ¿Îª   sMB_COILS_NREGS/MB_BITS + 1
-	#define sMB_DiscreteBuf_Addr 	(sMB_CoilsBuf_Addr + sMB_COILS_NREGS/MB_BITS +1)        //ÊıÁ¿Îª   sMB_DISCRETE_NREGS/MB_BITS + 1
-    #define sMB_BUF_SIZE            (sMB_DiscreteBuf_Addr + sMB_DISCRETE_NREGS/MB_BITS + 1) //ÊıÁ¿Îª   sMB_DISCRETE_NREGS/MB_BITS + 1
+	#define sMB_HoldingBuf_Addr 	0                                                       //æ•°é‡ä¸º   sMB_HOLDING_NREGS
+	#define sMB_InputBuf_Addr 	    (sMB_HoldingBuf_Addr + sMB_HOLDING_NREGS)               //æ•°é‡ä¸º   sMB_INPUT_NREGS
+	#define sMB_CoilsBuf_Addr 	    (sMB_InputBuf_Addr + sMB_INPUT_NREGS)                   //æ•°é‡ä¸º   sMB_COILS_NREGS/MB_BITS + 1
+	#define sMB_DiscreteBuf_Addr 	(sMB_CoilsBuf_Addr + sMB_COILS_NREGS/MB_BITS +1)        //æ•°é‡ä¸º   sMB_DISCRETE_NREGS/MB_BITS + 1
+    #define sMB_BUF_SIZE            (sMB_DiscreteBuf_Addr + sMB_DISCRETE_NREGS/MB_BITS + 1) //æ•°é‡ä¸º   sMB_DISCRETE_NREGS/MB_BITS + 1
     
     static  USHORT MBBuf[sMB_BUF_SIZE];
 
@@ -38,10 +38,10 @@
 ********************************************************************************************************
 *                                                sMB RegHoldingWrite Callback
 *
-* Description: ´Ëº¯ÊıÓÃÓÚRegHoldingWrite»Øµ÷º¯Êı
-* Arguments  : addr       RegHoldingµØÖ·
-*            : value      RegHoldingµØÖ·ÉÏµÄÖµ
-* Note(s)    : 1) sMB_RegHoldingCBCallback() ¿É×÷ÎªÓÃ»§hookº¯Êı¡£
+* Description: æ­¤å‡½æ•°ç”¨äºRegHoldingWriteå›è°ƒå‡½æ•°
+* Arguments  : addr       RegHoldingåœ°å€
+*            : value      RegHoldingåœ°å€ä¸Šçš„å€¼
+* Note(s)    : 1) sMB_RegHoldingCBCallback() å¯ä½œä¸ºç”¨æˆ·hookå‡½æ•°ã€‚
 ********************************************************************************************************
 */
 void sMB_RegHoldingWriteCallback(USHORT addr,USHORT value)
@@ -54,11 +54,11 @@ void sMB_RegHoldingWriteCallback(USHORT addr,USHORT value)
 ********************************************************************************************************
 *                                                sMB RegCoilsWrite Callback
 *
-* Description: ´Ëº¯ÊıÓÃÓÚRegCoilsWrite»Øµ÷º¯Êı
-* Arguments  : addr       RegCoilsµØÖ·
-*            : NBits      Ğ´ÈëµÄÎ»Êı <=16
-*            : value      RegCoilsµØÖ·ÉÏµÄÖµ
-* Note(s)    : 1) sMB_RegCoilsCBCallback() ¿É×÷ÎªÓÃ»§hookº¯Êı¡£
+* Description: æ­¤å‡½æ•°ç”¨äºRegCoilsWriteå›è°ƒå‡½æ•°
+* Arguments  : addr       RegCoilsåœ°å€
+*            : NBits      å†™å…¥çš„ä½æ•° <=16
+*            : value      RegCoilsåœ°å€ä¸Šçš„å€¼
+* Note(s)    : 1) sMB_RegCoilsCBCallback() å¯ä½œä¸ºç”¨æˆ·hookå‡½æ•°ã€‚
 ********************************************************************************************************
 */
 void sMB_RegCoilsWriteCallback( USHORT addr,UCHAR NBits,USHORT value)
@@ -97,12 +97,12 @@ USHORT* sMB_GetpBuf(USHORT addr,USHORT num)
 ********************************************************************************************************
 *                                                  Set Buf
 *
-* Description: ´Ëº¯ÊıÓÃÓÚÉèÖÃÊı¾İ
-* Arguments  : addr           bufÊı¾İÆ«ÒÆµØÖ·
-*              dst            Ä¿±êÊı¾İµØÖ·
-*              num            Êı¾İ¸öÊı
-* Returns    : MBTRUE         ³É¹¦
-*              MBFALSE        Ê§°Ü
+* Description: æ­¤å‡½æ•°ç”¨äºè®¾ç½®æ•°æ®
+* Arguments  : addr           bufæ•°æ®åç§»åœ°å€
+*              dst            ç›®æ ‡æ•°æ®åœ°å€
+*              num            æ•°æ®ä¸ªæ•°
+* Returns    : MBTRUE         æˆåŠŸ
+*              MBFALSE        å¤±è´¥
 * Note(s)    : 1) MB_GetBuf() 
 ********************************************************************************************************
 */
@@ -139,12 +139,12 @@ MB_Exception MB_SetBuf(USHORT addr,USHORT dst)
 ********************************************************************************************************
 *                                                  Get Buf
 *
-* Description: ´Ëº¯ÊıÓÃÓÚ»ñÈ¡Êı¾İ
-* Arguments  : addr           bufÊı¾İÆ«ÒÆµØÖ·
-*              dst            Ä¿±êÊı¾İµØÖ·
-*              num            Êı¾İ¸öÊı
-* Returns    : MBTRUE         ³É¹¦
-*              MBFALSE        Ê§°Ü
+* Description: æ­¤å‡½æ•°ç”¨äºè·å–æ•°æ®
+* Arguments  : addr           bufæ•°æ®åç§»åœ°å€
+*              dst            ç›®æ ‡æ•°æ®åœ°å€
+*              num            æ•°æ®ä¸ªæ•°
+* Returns    : MBTRUE         æˆåŠŸ
+*              MBFALSE        å¤±è´¥
 * Note(s)    : 1) MB_GetBuf() 
 ********************************************************************************************************
 */

@@ -1,4 +1,4 @@
-/*
+ï»¿/*
 ********************************************************************************************************
 *                                                wModbus
 *                                 The Embedded Modbus Stack Software
@@ -120,40 +120,40 @@ typedef enum
 typedef enum
 {
     MB_EX_NONE                          = 0x00,                 /**/
-    MB_EX_ILLEGAL_FUNCTION              = 0x01,                 /*²»ºÏ·¨µÄ¹¦ÄÜ´úÂë*/
-    MB_EX_ILLEGAL_DATA_ADDRESS          = 0x02,                 /*²»ºÏ·¨Êı¾İµØÖ·*/	
-    MB_EX_ILLEGAL_DATA_VALUE            = 0x03,                 /*²»ºÏ·¨Êı¾İ*/	
-    MB_EX_SLAVE_DEVICE_FAILURE          = 0x04,                 /*´Ó»úÉè±¸¹ÊÕÏ*/	
-    MB_EX_ACKNOWLEDGE                   = 0x05,                 /*È·ÈÏ*/	
-    MB_EX_SLAVE_BUSY                    = 0x06,                 /*´Ó»úÉè±¸Ã¦*/
-    MB_EX_NEGATIVE                      = 0x07,                 /*·ñ¶¨*/
-    MB_EX_MEMORY_PARITY_ERROR           = 0x08,                 /*ÄÚ´æÆæÅ¼Ğ£Ñé´íÎó*/		
+    MB_EX_ILLEGAL_FUNCTION              = 0x01,                 /*ä¸åˆæ³•çš„åŠŸèƒ½ä»£ç */
+    MB_EX_ILLEGAL_DATA_ADDRESS          = 0x02,                 /*ä¸åˆæ³•æ•°æ®åœ°å€*/	
+    MB_EX_ILLEGAL_DATA_VALUE            = 0x03,                 /*ä¸åˆæ³•æ•°æ®*/	
+    MB_EX_SLAVE_DEVICE_FAILURE          = 0x04,                 /*ä»æœºè®¾å¤‡æ•…éšœ*/	
+    MB_EX_ACKNOWLEDGE                   = 0x05,                 /*ç¡®è®¤*/	
+    MB_EX_SLAVE_BUSY                    = 0x06,                 /*ä»æœºè®¾å¤‡å¿™*/
+    MB_EX_NEGATIVE                      = 0x07,                 /*å¦å®š*/
+    MB_EX_MEMORY_PARITY_ERROR           = 0x08,                 /*å†…å­˜å¥‡å¶æ ¡éªŒé”™è¯¯*/		
     MB_EX_GATEWAY_PATH_FAILED           = 0x0A,                 /**/		
     MB_EX_GATEWAY_TGT_FAILED            = 0x0B,                 /**/
 	
-	MB_EX_NO_MEMORY               		= 0x11,					//ÎŞ¿ÉÓÃÄÚ´æ
-    MB_EX_REVDATAERR                 	= 0x12,					//Êı¾İĞ£Ñé³ö´í
+	MB_EX_NO_MEMORY               		= 0x11,					//æ— å¯ç”¨å†…å­˜
+    MB_EX_REVDATAERR                 	= 0x12,					//æ•°æ®æ ¡éªŒå‡ºé”™
 } MB_Exception;
 
-typedef  UCHAR(*MBPortTransmit )(void *Parent, UCHAR *pData, USHORT Size,ULONG lTimeOut);//·¢ËÍ»Øµ÷º¯Êı
-typedef  SHORT(*MBPortReceive  )(void *Parent, UCHAR *pData, USHORT Size,ULONG lTimeOut);//½ÓÊÕ»Øµ÷º¯Êı
+typedef  UCHAR(*MBPortTransmit )(void *Parent, UCHAR *pData, USHORT Size,ULONG lTimeOut);//å‘é€å›è°ƒå‡½æ•°
+typedef  SHORT(*MBPortReceive  )(void *Parent, UCHAR *pData, USHORT Size,ULONG lTimeOut);//æ¥æ”¶å›è°ƒå‡½æ•°
 
 typedef  struct    wmb       wMB;
 struct  wmb{
-    UCHAR              NodeAddr;								/*node µØÖ·*/
-    UCHAR              MasterSlave;								/*Ö÷´ÓÀàĞÍ*/
-    MB_ModeType        Mode;									/*´«ÊäÄ£Ê½*/
-    UCHAR              ReadWrite;								/*¶ÁĞ´ÀàĞÍ*/ 
+    UCHAR              NodeAddr;								/*node åœ°å€*/
+    UCHAR              MasterSlave;								/*ä¸»ä»ç±»å‹*/
+    MB_ModeType        Mode;									/*ä¼ è¾“æ¨¡å¼*/
+    UCHAR              ReadWrite;								/*è¯»å†™ç±»å‹*/ 
     UCHAR              Value_off;               
     UCHAR              RecvAddr;                
     UCHAR              BufCnt;        
 	USHORT             RegCnt;               
     USHORT             RegAddress;
     USHORT             ComCnt;    
-    void               *Parent; 								/*²ÎÊı*/
+    void               *Parent; 								/*å‚æ•°*/
     void               *Mutex;    
-    MBPortReceive      RxCpltPtr;								/*½ÓÊÕ»Øµ÷º¯Êı*/   
-    MBPortTransmit     TxCpltPtr;								/*·¢ËÍ»Øµ÷º¯Êı*/  
+    MBPortReceive      RxCpltPtr;								/*æ¥æ”¶å›è°ƒå‡½æ•°*/   
+    MBPortTransmit     TxCpltPtr;								/*å‘é€å›è°ƒå‡½æ•°*/  
 
 #if (MB_MASTER_ENABLED  == MBENABLED) 
     USHORT             BitOffset;
@@ -161,10 +161,10 @@ struct  wmb{
 #endif
 
 #if (MB_STAT_ENABLED == MBENABLED)
-	ULONG              StatSendCtr;								/*·¢ËÍÁ¿Í³¼Æ*/
-    ULONG              StatReceiveErrCtr;						/*½ÓÊÕ´íÎóÁ¿Í³¼Æ*/
-    ULONG              StatHandlersErrCtr;						/*´¦Àí´íÎóÁ¿Í³¼Æ*/
-    ULONG              StatOKCtr;								/*ÕıÈ·Á¿Í³¼Æ*/             
+	ULONG              StatSendCtr;								/*å‘é€é‡ç»Ÿè®¡*/
+    ULONG              StatReceiveErrCtr;						/*æ¥æ”¶é”™è¯¯é‡ç»Ÿè®¡*/
+    ULONG              StatHandlersErrCtr;						/*å¤„ç†é”™è¯¯é‡ç»Ÿè®¡*/
+    ULONG              StatOKCtr;								/*æ­£ç¡®é‡ç»Ÿè®¡*/             
 #endif 
 };
  

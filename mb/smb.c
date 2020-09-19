@@ -1,4 +1,4 @@
-/*
+ï»¿/*
 ********************************************************************************************************
 *                                                wModbus
 *                                 The Embedded Modbus Stack Software
@@ -41,10 +41,10 @@
 ********************************************************************************************************
 *                                                sMB RegInputCB
 *
-* Description: ´Ëº¯ÊıÓÃÓÚ´Ó»ú RegInput µÄÊı¾İ´¦Àíº¯Êı
-* Arguments  : p_mb           Ö¸Ïò1¸öwModbusµÄÖ¸Õë
+* Description: æ­¤å‡½æ•°ç”¨äºä»æœº RegInput çš„æ•°æ®å¤„ç†å‡½æ•°
+* Arguments  : p_mb           æŒ‡å‘1ä¸ªwModbusçš„æŒ‡é’ˆ
 * Returns    : 
-* Note(s)    : 1) ÓÃÓÚFN04 ÃüÁî
+* Note(s)    : 1) ç”¨äºFN04 å‘½ä»¤
 ********************************************************************************************************
 */
 static MB_Exception sMB_RegInputCB( wMB *p_mb ,UCHAR* pBuf)
@@ -73,10 +73,10 @@ static MB_Exception sMB_RegInputCB( wMB *p_mb ,UCHAR* pBuf)
 ********************************************************************************************************
 *                                                sMB RegHolding
 *
-* Description: ´Ëº¯ÊıÓÃÓÚ´Ó»ú RegHolding µÄÊı¾İ´¦Àíº¯Êı
-* Arguments  : p_mb           Ö¸Ïò1¸öwModbusµÄÖ¸Õë
+* Description: æ­¤å‡½æ•°ç”¨äºä»æœº RegHolding çš„æ•°æ®å¤„ç†å‡½æ•°
+* Arguments  : p_mb           æŒ‡å‘1ä¸ªwModbusçš„æŒ‡é’ˆ
 * Returns    : 
-* Note(s)    : 1) ÓÃÓÚFN03 FN06 FN16 FN23 ÃüÁî
+* Note(s)    : 1) ç”¨äºFN03 FN06 FN16 FN23 å‘½ä»¤
 ********************************************************************************************************
 */
 static MB_Exception sMB_RegHoldingCB( wMB *p_mb ,UCHAR* pBuf)
@@ -117,10 +117,10 @@ static MB_Exception sMB_RegHoldingCB( wMB *p_mb ,UCHAR* pBuf)
 ********************************************************************************************************
 *                                                sMB RegCoilsCB
 *
-* Description: ´Ëº¯ÊıÓÃÓÚ´Ó»ú RegCoilsCB µÄÊı¾İ´¦Àíº¯Êı
-* Arguments  : p_mb           Ö¸Ïò1¸öwModbusµÄÖ¸Õë
+* Description: æ­¤å‡½æ•°ç”¨äºä»æœº RegCoilsCB çš„æ•°æ®å¤„ç†å‡½æ•°
+* Arguments  : p_mb           æŒ‡å‘1ä¸ªwModbusçš„æŒ‡é’ˆ
 * Returns    : 
-* Note(s)    : 1) ÓÃÓÚFN01 FN05 FN15ÃüÁî
+* Note(s)    : 1) ç”¨äºFN01 FN05 FN15å‘½ä»¤
 ********************************************************************************************************
 */
 static MB_Exception sMB_RegCoilsCB( wMB *p_mb ,UCHAR* pBuf)
@@ -169,10 +169,10 @@ static MB_Exception sMB_RegCoilsCB( wMB *p_mb ,UCHAR* pBuf)
 ********************************************************************************************************
 *                                                sMB RegDiscreteCB
 *
-* Description: ´Ëº¯ÊıÓÃÓÚ´Ó»ú RegDiscreteCB µÄÊı¾İ´¦Àíº¯Êı
-* Arguments  : p_mb           Ö¸Ïò1¸öwModbusµÄÖ¸Õë
+* Description: æ­¤å‡½æ•°ç”¨äºä»æœº RegDiscreteCB çš„æ•°æ®å¤„ç†å‡½æ•°
+* Arguments  : p_mb           æŒ‡å‘1ä¸ªwModbusçš„æŒ‡é’ˆ
 * Returns    : 
-* Note(s)    : 1) ÓÃÓÚFN02 ÃüÁî
+* Note(s)    : 1) ç”¨äºFN02 å‘½ä»¤
 ********************************************************************************************************
 */
 static MB_Exception sMB_RegDiscreteCB(wMB *p_mb,UCHAR* pBuf)
@@ -204,8 +204,8 @@ static MB_Exception sMB_RegDiscreteCB(wMB *p_mb,UCHAR* pBuf)
 ********************************************************************************************************
 *                                                sMB FN01 Handler
 *
-* Description: ´Ëº¯ÊıÓÃÓÚ´Ó»ú FN01 ºÅÃüÁîµÄ´¦Àíº¯Êı
-* Arguments  : p_mb           Ö¸Ïò1¸öwModbusµÄÖ¸Õë
+* Description: æ­¤å‡½æ•°ç”¨äºä»æœº FN01 å·å‘½ä»¤çš„å¤„ç†å‡½æ•°
+* Arguments  : p_mb           æŒ‡å‘1ä¸ªwModbusçš„æŒ‡é’ˆ
 * Returns    : 
 * Note(s)    : 1) 
 ********************************************************************************************************
@@ -254,8 +254,8 @@ static MB_Exception sMB_FN01_Read_CoilsHandler( wMB *p_mb ,UCHAR* pBuf)
 ********************************************************************************************************
 *                                                sMB FN02 Handler
 *
-* Description: ´Ëº¯ÊıÓÃÓÚ´Ó»ú FN02 ºÅÃüÁîµÄ´¦Àíº¯Êı
-* Arguments  : p_mb           Ö¸Ïò1¸öwModbusµÄÖ¸Õë
+* Description: æ­¤å‡½æ•°ç”¨äºä»æœº FN02 å·å‘½ä»¤çš„å¤„ç†å‡½æ•°
+* Arguments  : p_mb           æŒ‡å‘1ä¸ªwModbusçš„æŒ‡é’ˆ
 * Returns    : 
 * Note(s)    : 1) 
 ********************************************************************************************************
@@ -301,8 +301,8 @@ static MB_Exception sMB_FN02_Read_DiscreteHandler( wMB *p_mb,UCHAR* pBuf)
 ********************************************************************************************************
 *                                                sMB FN03 Handler
 *
-* Description: ´Ëº¯ÊıÓÃÓÚ´Ó»ú FN03 ºÅÃüÁîµÄ´¦Àíº¯Êı
-* Arguments  : p_mb           Ö¸Ïò1¸öwModbusµÄÖ¸Õë
+* Description: æ­¤å‡½æ•°ç”¨äºä»æœº FN03 å·å‘½ä»¤çš„å¤„ç†å‡½æ•°
+* Arguments  : p_mb           æŒ‡å‘1ä¸ªwModbusçš„æŒ‡é’ˆ
 * Returns    : 
 * Note(s)    : 1) 
 ********************************************************************************************************
@@ -340,8 +340,8 @@ static MB_Exception sMB_FN03_Read_HoldingRegister( wMB *p_mb,UCHAR* pBuf)
 ********************************************************************************************************
 *                                                sMB FN04 Handler
 *
-* Description: ´Ëº¯ÊıÓÃÓÚ´Ó»ú FN04 ºÅÃüÁîµÄ´¦Àíº¯Êı
-* Arguments  : p_mb           Ö¸Ïò1¸öwModbusµÄÖ¸Õë
+* Description: æ­¤å‡½æ•°ç”¨äºä»æœº FN04 å·å‘½ä»¤çš„å¤„ç†å‡½æ•°
+* Arguments  : p_mb           æŒ‡å‘1ä¸ªwModbusçš„æŒ‡é’ˆ
 * Returns    : 
 * Note(s)    : 1) 
 ********************************************************************************************************
@@ -378,8 +378,8 @@ static MB_Exception sMB_FN04_Read_InputHandler( wMB *p_mb,UCHAR* pBuf)
 ********************************************************************************************************
 *                                                sMB FN05 Handler
 *
-* Description: ´Ëº¯ÊıÓÃÓÚ´Ó»ú FN05 ºÅÃüÁîµÄ´¦Àíº¯Êı
-* Arguments  : p_mb           Ö¸Ïò1¸öwModbusµÄÖ¸Õë
+* Description: æ­¤å‡½æ•°ç”¨äºä»æœº FN05 å·å‘½ä»¤çš„å¤„ç†å‡½æ•°
+* Arguments  : p_mb           æŒ‡å‘1ä¸ªwModbusçš„æŒ‡é’ˆ
 * Returns    : 
 * Note(s)    : 1) 
 ********************************************************************************************************
@@ -425,8 +425,8 @@ static MB_Exception sMB_FN05_Write_CoilsHandler( wMB *p_mb ,UCHAR* pBuf)
 ********************************************************************************************************
 *                                                sMB FN06 Handler
 *
-* Description: ´Ëº¯ÊıÓÃÓÚ´Ó»ú FN06 ºÅÃüÁîµÄ´¦Àíº¯Êı
-* Arguments  : p_mb           Ö¸Ïò1¸öwModbusµÄÖ¸Õë
+* Description: æ­¤å‡½æ•°ç”¨äºä»æœº FN06 å·å‘½ä»¤çš„å¤„ç†å‡½æ•°
+* Arguments  : p_mb           æŒ‡å‘1ä¸ªwModbusçš„æŒ‡é’ˆ
 * Returns    : 
 * Note(s)    : 1) 
 ********************************************************************************************************
@@ -458,8 +458,8 @@ static MB_Exception sMB_FN06_Write_HoldingHandler( wMB *p_mb ,UCHAR* pBuf)
 ********************************************************************************************************
 *                                                sMB FN15 Handler
 *
-* Description: ´Ëº¯ÊıÓÃÓÚ´Ó»ú FN15 ºÅÃüÁîµÄ´¦Àíº¯Êı
-* Arguments  : p_mb           Ö¸Ïò1¸öwModbusµÄÖ¸Õë
+* Description: æ­¤å‡½æ•°ç”¨äºä»æœº FN15 å·å‘½ä»¤çš„å¤„ç†å‡½æ•°
+* Arguments  : p_mb           æŒ‡å‘1ä¸ªwModbusçš„æŒ‡é’ˆ
 * Returns    : 
 * Note(s)    : 1) 
 ********************************************************************************************************
@@ -506,8 +506,8 @@ static MB_Exception sMB_FN15_Write_CoilsHandler( wMB *p_mb ,UCHAR* pBuf)
 ********************************************************************************************************
 *                                                sMB FN16 Handler
 *
-* Description: ´Ëº¯ÊıÓÃÓÚ´Ó»ú FN16 ºÅÃüÁîµÄ´¦Àíº¯Êı
-* Arguments  : p_mb           Ö¸Ïò1¸öwModbusµÄÖ¸Õë
+* Description: æ­¤å‡½æ•°ç”¨äºä»æœº FN16 å·å‘½ä»¤çš„å¤„ç†å‡½æ•°
+* Arguments  : p_mb           æŒ‡å‘1ä¸ªwModbusçš„æŒ‡é’ˆ
 * Returns    : 
 * Note(s)    : 1) 
 ********************************************************************************************************
@@ -545,8 +545,8 @@ static MB_Exception sMB_FN16_Write_HoldingHandler( wMB *p_mb ,UCHAR* pBuf)
 ********************************************************************************************************
 *                                                sMB FN23 Handler
 *
-* Description: ´Ëº¯ÊıÓÃÓÚ´Ó»ú FN23 ºÅÃüÁîµÄ´¦Àíº¯Êı
-* Arguments  : p_mb           Ö¸Ïò1¸öwModbusµÄÖ¸Õë
+* Description: æ­¤å‡½æ•°ç”¨äºä»æœº FN23 å·å‘½ä»¤çš„å¤„ç†å‡½æ•°
+* Arguments  : p_mb           æŒ‡å‘1ä¸ªwModbusçš„æŒ‡é’ˆ
 * Returns    : 
 * Note(s)    : 1) 
 ********************************************************************************************************
@@ -593,9 +593,9 @@ static MB_Exception sMB_FN23_ReadWrite_HoldingHandler( wMB *p_mb,UCHAR* pBuf)
 ********************************************************************************************************
 *                                                Function Handlers
 *
-* Description: ´Ëº¯ÊıÓÃÓÚ´Ó»úwModbusĞ­ÒéÕ»µÄ¹¦ÄÜº¯Êı¿âµ÷ÓÃ¡£
-* Arguments  : p_mb           Ö¸Ïò1¸öwModbusµÄÖ¸Õë
-* Note(s)    : 1) sMB_FuncHandlers() ×Ô¶¯±» sMB_Poll()µ÷ÓÃ
+* Description: æ­¤å‡½æ•°ç”¨äºä»æœºwModbusåè®®æ ˆçš„åŠŸèƒ½å‡½æ•°åº“è°ƒç”¨ã€‚
+* Arguments  : p_mb           æŒ‡å‘1ä¸ªwModbusçš„æŒ‡é’ˆ
+* Note(s)    : 1) sMB_FuncHandlers() è‡ªåŠ¨è¢« sMB_Poll()è°ƒç”¨
 ********************************************************************************************************
 */
 static MB_Exception sMB_FuncHandlers(wMB   *p_mb,UCHAR* pBuf)
@@ -668,10 +668,10 @@ static MB_Exception sMB_FuncHandlers(wMB   *p_mb,UCHAR* pBuf)
 ********************************************************************************************************
 *                                                Deal A wModbus
 *
-* Description: ´Ëº¯ÊıÓÃÓÚ´Ó»úwModbusĞ­ÒéÕ»Pollº¯Êı£¬ĞèÑ­»·µ÷ÓÃ¡£
-* Arguments  : p_mb           Ö¸Ïò1¸öwModbusµÄÖ¸Õë
-* Returns    : MB_Exception   ·µ»Ø´íÎó´úÂë¡£
-* Note(s)    : 1) sMB_Deal() Ó¦µ±´´½¨Ò»¸öwModbusĞ­ÒéÕ»²¢Ê¹ÄÜºóÊ¹ÓÃ
+* Description: æ­¤å‡½æ•°ç”¨äºä»æœºwModbusåè®®æ ˆPollå‡½æ•°ï¼Œéœ€å¾ªç¯è°ƒç”¨ã€‚
+* Arguments  : p_mb           æŒ‡å‘1ä¸ªwModbusçš„æŒ‡é’ˆ
+* Returns    : MB_Exception   è¿”å›é”™è¯¯ä»£ç ã€‚
+* Note(s)    : 1) sMB_Deal() åº”å½“åˆ›å»ºä¸€ä¸ªwModbusåè®®æ ˆå¹¶ä½¿èƒ½åä½¿ç”¨
 ********************************************************************************************************
 */
 USHORT sMB_Deal( wMB *p_mb,UCHAR* pBuf,USHORT length )

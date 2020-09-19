@@ -28,24 +28,26 @@
 #define MB_ucos                               ( 1 )
 #define MB_rtthread                           ( 2 )
 
-#define MB_EventMutex  MB_linux
+#define MB_EventMutex  MB_ucos
 
 #if (MB_EventMutex ==  MB_linux)
 	#include<pthread.h>
 #elif (MB_EventMutex ==  MB_ucos)
 	#include "oS.h" 
+#elif (MB_EventMutex ==  MB_rtthread)
+	#include "rtthread.h"
 #endif
  
 /*
 ********************************************************************************************************
 *                                                Init A Mutex RunRes 
 *
-* Description: ´Ëº¯ÊýÓÃÓÚ³õÊ¹»¯RunRes»¥³â×ÊÔ´
-* Arguments  : p_mb           Ö¸Ïò1¸öwModbusµÄÖ¸Õë
-* Returns    : UCHAR          ·µ»Ø´¦Àí½á¹û
-*                   MBTRUE              ´¦Àí
-*                   MBFALSE             ³ö´í 
-* Note(s)    : 1 MB_MutexInit() ÔÚMASTER ModbusÖÐÊ¹ÓÃ
+* Description: æ­¤å‡½æ•°ç”¨äºŽåˆä½¿åŒ–RunResäº’æ–¥èµ„æº
+* Arguments  : p_mb           æŒ‡å‘1ä¸ªwModbusçš„æŒ‡é’ˆ
+* Returns    : UCHAR          è¿”å›žå¤„ç†ç»“æžœ
+*                   MBTRUE              å¤„ç†
+*                   MBFALSE             å‡ºé”™ 
+* Note(s)    : 1 MB_MutexInit() åœ¨MASTER Modbusä¸­ä½¿ç”¨
 ********************************************************************************************************
 */
 UCHAR MB_MutexInit( wMB *p_mb , void* mutex)
@@ -63,8 +65,13 @@ UCHAR MB_MutexInit( wMB *p_mb , void* mutex)
 		if( error == 0) return MBTRUE; else return MBFALSE;
 	#elif (MB_EventMutex ==  MB_ucos)
 		OS_ERR       OsErr;
-		OSMutexCreate(p_mb->Mutex, "Master Run Res Sem",&OsErr );
+		OSMutexCreate(p_mb->Mutex, "modbus event",&OsErr );
 		if( OsErr == OS_ERR_NONE) return MBTRUE; else return MBFALSE;
+	#elif (MB_EventMutex ==  MB_rtthread)
+		int error;
+		p_mb->Mutex = mutex;
+		error = rt_mutex_init(p_mb->Mutex, "modbus event",RT_IPC_FLAG_FIFO); 
+		if( error == RT_EOK) return MBTRUE; else return MBFALSE;
 	#endif
 }
 
@@ -72,11 +79,11 @@ UCHAR MB_MutexInit( wMB *p_mb , void* mutex)
 ********************************************************************************************************
 *                                                Close A Mutex RunRes
 *
-* Description: ´Ëº¯ÊýÓÃÓÚÉ¾µôRunRes»¥³â×ÊÔ´
-* Arguments  : p_mb           Ö¸Ïò1¸öwModbusµÄÖ¸Õë
-* Returns    : UCHAR          ·µ»Ø´¦Àí½á¹û
-*                   MBTRUE              ´¦Àí
-*                   MBFALSE             ³ö´í 
+* Description: æ­¤å‡½æ•°ç”¨äºŽåˆ æŽ‰RunResäº’æ–¥èµ„æº
+* Arguments  : p_mb           æŒ‡å‘1ä¸ªwModbusçš„æŒ‡é’ˆ
+* Returns    : UCHAR          è¿”å›žå¤„ç†ç»“æžœ
+*                   MBTRUE              å¤„ç†
+*                   MBFALSE             å‡ºé”™ 
 * Note(s)    : 1) MB_MutexClose()
 ********************************************************************************************************
 */
@@ -86,7 +93,6 @@ UCHAR MB_MutexClose( wMB *p_mb )
     {
          return MBTRUE; 
     }  
-	
 	#if (MB_EventMutex ==  MB_linux)
 		int error;
 		error = pthread_mutex_destroy(p_mb->Mutex);
@@ -95,6 +101,10 @@ UCHAR MB_MutexClose( wMB *p_mb )
 		OS_ERR       OsErr;
 		OSMutexDel(p_mb->Mutex,OS_OPT_DEL_ALWAYS,&OsErr );
 		if( OsErr == OS_ERR_NONE) return MBTRUE; else return MBFALSE;
+	#elif (MB_EventMutex ==  MB_rtthread)
+		int error;
+		error = rt_mutex_detach(p_mb->Mutex);
+		if( error == RT_EOK) return MBTRUE; else return MBFALSE;
 	#endif
 } 
 
@@ -102,12 +112,12 @@ UCHAR MB_MutexClose( wMB *p_mb )
 ********************************************************************************************************
 *                                                Post A Mutex RunRes
 *
-* Description: ´Ëº¯ÊýÓÃÓÚ·¢ËÍRunRes»¥³â×ÊÔ´
-* Arguments  : p_mb           Ö¸Ïò1¸öwModbusµÄÖ¸Õë
-* Returns    : UCHAR          ·µ»Ø´¦Àí½á¹û
-*                   MBTRUE              ´¦Àí
-*                   MBFALSE             ³ö´í 
-* Note(s)    : 1) MB_MutexPost() ÔÚMASTER ModbusÖÐÊ¹ÓÃ
+* Description: æ­¤å‡½æ•°ç”¨äºŽå‘é€RunResäº’æ–¥èµ„æº
+* Arguments  : p_mb           æŒ‡å‘1ä¸ªwModbusçš„æŒ‡é’ˆ
+* Returns    : UCHAR          è¿”å›žå¤„ç†ç»“æžœ
+*                   MBTRUE              å¤„ç†
+*                   MBFALSE             å‡ºé”™ 
+* Note(s)    : 1) MB_MutexPost() åœ¨MASTER Modbusä¸­ä½¿ç”¨
 ********************************************************************************************************
 */
 UCHAR MB_MutexPost( wMB *p_mb )
@@ -125,6 +135,10 @@ UCHAR MB_MutexPost( wMB *p_mb )
 		OS_ERR       OsErr;
 		OSMutexPost(p_mb->Mutex,OS_OPT_POST_NONE, &OsErr);
 		if( OsErr == OS_ERR_NONE) return MBTRUE; else return MBFALSE;
+	#elif (MB_EventMutex ==  MB_rtthread)
+		int error;
+		error = rt_mutex_release(p_mb->Mutex);
+		if( error == RT_EOK) return MBTRUE; else return MBFALSE;	
 	#endif	
 }
 
@@ -132,12 +146,12 @@ UCHAR MB_MutexPost( wMB *p_mb )
 ********************************************************************************************************
 *                                                Pend A Mutex RunRes
 *
-* Description: ´Ëº¯ÊýÓÃÓÚÇëÇóRunRes»¥³â×ÊÔ´
-* Arguments  : p_mb           Ö¸Ïò1¸öwModbusµÄÖ¸Õë
-* Returns    : UCHAR          ·µ»Ø´¦Àí½á¹û
-*                   MBTRUE              ´¦Àí
-*                   MBFALSE             ³ö´í 
-* Note(s)    : 1) MB_MutexPend() ÔÚMASTER ModbusÖÐÊ¹ÓÃ
+* Description: æ­¤å‡½æ•°ç”¨äºŽè¯·æ±‚RunResäº’æ–¥èµ„æº
+* Arguments  : p_mb           æŒ‡å‘1ä¸ªwModbusçš„æŒ‡é’ˆ
+* Returns    : UCHAR          è¿”å›žå¤„ç†ç»“æžœ
+*                   MBTRUE              å¤„ç†
+*                   MBFALSE             å‡ºé”™ 
+* Note(s)    : 1) MB_MutexPend() åœ¨MASTER Modbusä¸­ä½¿ç”¨
 ********************************************************************************************************
 */
 UCHAR MB_MutexPend( wMB *p_mb)
@@ -155,5 +169,9 @@ UCHAR MB_MutexPend( wMB *p_mb)
 		OS_ERR       OsErr;
 		OSMutexPend(p_mb->Mutex, 0, OS_OPT_PEND_BLOCKING, 0, &OsErr);
 		if( OsErr == OS_ERR_NONE) return MBTRUE; else return MBFALSE;
+	#elif (MB_EventMutex ==  MB_rtthread)
+		int error;
+		error = rt_mutex_take(p_mb->Mutex, RT_WAITING_FOREVER);
+		if( error == RT_EOK) return MBTRUE; else return MBFALSE;	
 	#endif	
 }

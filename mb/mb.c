@@ -29,10 +29,10 @@
 ********************************************************************************************************
 *                                                LRC
 *
-* Description: ´Ëº¯ÊıÓÃÓÚASCIIÄ£Ê½ÏÂµÄLRCĞ£Ñé
-* Arguments  : pDataBuf       Ö¸ÏòĞèÒªĞ£ÑéDataBufµÄÖ¸Õë
-*              iLen           DataBufµÄ³¤¶È
-* Returns    : UCHAR          LRCĞ£ÑéµÄ½á¹û
+* Description: æ­¤å‡½æ•°ç”¨äºASCIIæ¨¡å¼ä¸‹çš„LRCæ ¡éªŒ
+* Arguments  : pDataBuf       æŒ‡å‘éœ€è¦æ ¡éªŒDataBufçš„æŒ‡é’ˆ
+*              iLen           DataBufçš„é•¿åº¦
+* Returns    : UCHAR          LRCæ ¡éªŒçš„ç»“æœ
 * Note(s)    : 1) MB_LRC() 
 ********************************************************************************************************
 */
@@ -49,10 +49,10 @@ static UCHAR MB_LRC( UCHAR* pDataBuf, USHORT iLen)
 ********************************************************************************************************
 *                                                CRC
 *
-* Description: ´Ëº¯ÊıÓÃÓÚRTUÄ£Ê½ÏÂµÄCRCĞ£Ñé
-* Arguments  : pDataBuf       Ö¸ÏòĞèÒªĞ£ÑéDataBufµÄÖ¸Õë
-*              iLen           DataBufµÄ³¤¶È
-* Returns    : USHORT         CRCĞ£ÑéµÄ½á¹û
+* Description: æ­¤å‡½æ•°ç”¨äºRTUæ¨¡å¼ä¸‹çš„CRCæ ¡éªŒ
+* Arguments  : pDataBuf       æŒ‡å‘éœ€è¦æ ¡éªŒDataBufçš„æŒ‡é’ˆ
+*              iLen           DataBufçš„é•¿åº¦
+* Returns    : USHORT         CRCæ ¡éªŒçš„ç»“æœ
 * Note(s)    : 1) MB_CRC() 
 ********************************************************************************************************
 */
@@ -107,13 +107,13 @@ static USHORT MB_CRC( UCHAR * pDataBuf, USHORT iLen )
 ********************************************************************************************************
 *                                                Init A wModbus
 *
-* Description: ´Ëº¯ÊıÓÃÓÚ´´½¨Ò»¸öwModbusĞ­ÒéÕ»
-* Arguments  : p_mb           Ö¸Ïò1¸öwModbusµÄÖ¸Õë
-*              Mode           ´«ÊäÄ£Ê½
-*              Address        µØÖ·
-*              Parent         ´«ÊäÓ²¼ş¾ä±ú
-* Returns    : MBTRUE         ´´½¨³É¹¦
-*              MBFALSE        ´´½¨Ê§°Ü
+* Description: æ­¤å‡½æ•°ç”¨äºåˆ›å»ºä¸€ä¸ªwModbusåè®®æ ˆ
+* Arguments  : p_mb           æŒ‡å‘1ä¸ªwModbusçš„æŒ‡é’ˆ
+*              Mode           ä¼ è¾“æ¨¡å¼
+*              Address        åœ°å€
+*              Parent         ä¼ è¾“ç¡¬ä»¶å¥æŸ„
+* Returns    : MBTRUE         åˆ›å»ºæˆåŠŸ
+*              MBFALSE        åˆ›å»ºå¤±è´¥
 * Note(s)    : 1) MB_Init() 
 ********************************************************************************************************
 */
@@ -150,10 +150,10 @@ UCHAR MB_Init( wMB *p_mb,MB_ModeType Mode,UCHAR Address,void *Parent,void* mutex
 ********************************************************************************************************
 *                                                Close A wModbus
 *
-* Description: ´Ëº¯ÊıÓÃÓÚ¹Ø±ÕÒ»¸öwModbusĞ­ÒéÕ»
-* Arguments  : p_mb           Ö¸Ïò1¸öwModbusµÄÖ¸Õë
-* Returns    : MBTRUE         ´´½¨³É¹¦
-*              MBFALSE        ´´½¨Ê§°Ü
+* Description: æ­¤å‡½æ•°ç”¨äºå…³é—­ä¸€ä¸ªwModbusåè®®æ ˆ
+* Arguments  : p_mb           æŒ‡å‘1ä¸ªwModbusçš„æŒ‡é’ˆ
+* Returns    : MBTRUE         åˆ›å»ºæˆåŠŸ
+*              MBFALSE        åˆ›å»ºå¤±è´¥
 * Note(s)    : 1) MB_Close() 
 ********************************************************************************************************
 */
@@ -178,10 +178,10 @@ UCHAR MB_Close( wMB *p_mb)
 ********************************************************************************************************
 *                                                MB Port Set
 *
-* Description: ´Ëº¯ÊıÓÃÓÚ³õÊ¹»¯Ó²¼ş¶Ë¿Ú²ÎÊı
-* Arguments  : p_mb           Ö¸Ïò1¸öwModbusµÄÖ¸Õë
-*              TxCpltPtr      Êı¾İ·¢ËÍ»Øµ÷º¯Êı
-*              RxCpltPtr      Êı¾İ½ÓÊÕ»Øµ÷º¯Êı
+* Description: æ­¤å‡½æ•°ç”¨äºåˆä½¿åŒ–ç¡¬ä»¶ç«¯å£å‚æ•°
+* Arguments  : p_mb           æŒ‡å‘1ä¸ªwModbusçš„æŒ‡é’ˆ
+*              TxCpltPtr      æ•°æ®å‘é€å›è°ƒå‡½æ•°
+*              RxCpltPtr      æ•°æ®æ¥æ”¶å›è°ƒå‡½æ•°
 * Returns    : No
 ********************************************************************************************************
 */
@@ -220,11 +220,11 @@ const UCHAR  MBChar_table[256] ={
 ********************************************************************************************************
 *                                                wModbus Receive manage
 *
-* Description: ´Ëº¯ÊıÓÃÓÚ°ÑÒ»¸öwModbusĞ­ÒéÕ»½ÓÊÕµ½µÄÊı¾İ½øĞĞ½ÓÊÕ´¦Àí¡£
-* Arguments  : p_mb           Ö¸Ïò1¸öwModbusµÄÖ¸Õë
-* Returns    : UCHAR          ·µ»Ø´¦Àí½á¹û
-*                   MBTRUE              ÕıÈ·´¦Àí
-*                   MBFALSE             Êı¾İ³ö´í    
+* Description: æ­¤å‡½æ•°ç”¨äºæŠŠä¸€ä¸ªwModbusåè®®æ ˆæ¥æ”¶åˆ°çš„æ•°æ®è¿›è¡Œæ¥æ”¶å¤„ç†ã€‚
+* Arguments  : p_mb           æŒ‡å‘1ä¸ªwModbusçš„æŒ‡é’ˆ
+* Returns    : UCHAR          è¿”å›å¤„ç†ç»“æœ
+*                   MBTRUE              æ­£ç¡®å¤„ç†
+*                   MBFALSE             æ•°æ®å‡ºé”™    
 * Note(s)    : 1) MB_Receive() 
 ********************************************************************************************************
 */
@@ -280,8 +280,8 @@ UCHAR MB_Receive( wMB   *p_mb,UCHAR* pRevBuf,USHORT RecvCnt )
 ********************************************************************************************************
 *                                                wModbus Send manage
 *
-* Description: ´Ëº¯ÊıÓÃÓÚ°ÑÒ»¸öwModbusĞ­ÒéÕ»µÄÊı¾İ½øĞĞ·¢ËÍ´¦Àí¡£
-* Arguments  : p_mb           Ö¸Ïò1¸öwModbusµÄÖ¸Õë
+* Description: æ­¤å‡½æ•°ç”¨äºæŠŠä¸€ä¸ªwModbusåè®®æ ˆçš„æ•°æ®è¿›è¡Œå‘é€å¤„ç†ã€‚
+* Arguments  : p_mb           æŒ‡å‘1ä¸ªwModbusçš„æŒ‡é’ˆ
 * Note(s)    : 1) MB_Send() 
 ********************************************************************************************************
 */
@@ -349,8 +349,8 @@ USHORT MB_Send( wMB   *p_mb ,UCHAR* pSndBuf)
 ********************************************************************************************************
 *                                                MB Poll
 *
-* Description: ´Ëº¯ÊıÓÃÓÚ¶Ë¿Ú½ÓÊÕÊı¾İ
-* Arguments  : p_mb           Ö¸Ïò1¸öwModbusµÄÖ¸Õë
+* Description: æ­¤å‡½æ•°ç”¨äºç«¯å£æ¥æ”¶æ•°æ®
+* Arguments  : p_mb           æŒ‡å‘1ä¸ªwModbusçš„æŒ‡é’ˆ
 * Note(s)    : 1) MB_Poll()  
 ********************************************************************************************************
 */
@@ -368,17 +368,24 @@ MB_Exception MB_Poll(wMB *p_mb,UCHAR* pBuf,LONG lTimeOut)
 	
     if(p_mb->RxCpltPtr != MBNULL)
     {
-        SHORT length = p_mb->RxCpltPtr(p_mb->Parent,pBuf,MB_PDU_SIZE_MAX,lTimeOut);
-        if(length >= MB_PDU_SIZE_MIN)
-        {          
-            if(p_mb->MasterSlave == MBMASTER)
-            {
+        SHORT length = p_mb->RxCpltPtr(p_mb->Parent,pBuf,MB_PDU_SIZE_MAX,lTimeOut);        
+		if(p_mb->MasterSlave == MBMASTER)
+		{
+			if(length >= MB_PDU_SIZE_MIN)
+			{
 				#if (MB_MASTER_ENABLED  == MBENABLED)
 					return mMB_Deal( p_mb,pBuf,length);
-				#endif				
-            }
+				#endif
+			}
 			else
 			{
+				return MB_EX_SLAVE_DEVICE_FAILURE;
+			}
+		}
+		else
+		{
+			if(length >= MB_PDU_SIZE_MIN)
+			{				
 				#if (MB_SLAVE_ENABLED  == MBENABLED)
 					USHORT Cnt = sMB_Deal( p_mb,pBuf,length);
 					if((p_mb->TxCpltPtr != MBNULL) && (Cnt > 0))
@@ -387,7 +394,7 @@ MB_Exception MB_Poll(wMB *p_mb,UCHAR* pBuf,LONG lTimeOut)
 					}
 				#endif	
 			}
-        }
+		}
     }
     return MB_EX_NONE;
 }
@@ -396,9 +403,9 @@ MB_Exception MB_Poll(wMB *p_mb,UCHAR* pBuf,LONG lTimeOut)
 ********************************************************************************************************
 *                                                 STAT Get
 *
-* Description: ´Ëº¯ÊıÓÃÓÚÏò»ñÈ¡Í³¼ÆĞÅÏ¢
-* Arguments  : p_mb           Ö¸Ïò1¸öwModbusµÄÖ¸Õë
-*              StatType       ĞèÒª»ñÈ¡µÄÊı¾İÀàĞÍ
+* Description: æ­¤å‡½æ•°ç”¨äºå‘è·å–ç»Ÿè®¡ä¿¡æ¯
+* Arguments  : p_mb           æŒ‡å‘1ä¸ªwModbusçš„æŒ‡é’ˆ
+*              StatType       éœ€è¦è·å–çš„æ•°æ®ç±»å‹
 * Note(s)    : 1) MB_STATGet()
 ********************************************************************************************************
 */
@@ -427,12 +434,12 @@ ULONG MB_STATGet( wMB   *p_mb ,MB_StatType StatType)
 ********************************************************************************************************
 *                                                Set Bits To WordBuf
 *
-* Description: ´Ëº¯ÊıÓÃÓÚÏòWordBufµÄÊı¾İ±íÄÚÉèÖÃNBits¸öBits
-* Arguments  : pWordBuf       Ö¸ÏòWordBufµÄÊı¾İÖ¸Õë
-*              BitOffset      Æ«ÒÆµØÖ·
-*              NBits          ĞèÒªÉè¶¨µÄbit¸öÊı
-*              SetValue       ĞèÒªÉè¶¨µÄÖµ
-* Note(s)    : 1) MB_UtilSetBits() ÓÃÓÚDiscrete »òÊÇ coilsµÄÊı¾İ×ª»¯
+* Description: æ­¤å‡½æ•°ç”¨äºå‘WordBufçš„æ•°æ®è¡¨å†…è®¾ç½®NBitsä¸ªBits
+* Arguments  : pWordBuf       æŒ‡å‘WordBufçš„æ•°æ®æŒ‡é’ˆ
+*              BitOffset      åç§»åœ°å€
+*              NBits          éœ€è¦è®¾å®šçš„bitä¸ªæ•°
+*              SetValue       éœ€è¦è®¾å®šçš„å€¼
+* Note(s)    : 1) MB_UtilSetBits() ç”¨äºDiscrete æˆ–æ˜¯ coilsçš„æ•°æ®è½¬åŒ–
 *              2) NBits<=16
 ********************************************************************************************************
 */
@@ -454,12 +461,12 @@ void MB_UtilSetBits( USHORT *pWordBuf, USHORT BitOffset, UCHAR NBits,USHORT SetV
 ********************************************************************************************************
 *                                                Get Bits From WordBuf
 *
-* Description: ´Ëº¯ÊıÓÃÓÚ´ÓWordBufµÄÊı¾İ±íÄÚ»ñÈ¡NBits¸öBits
-* Arguments  : pWordBuf       Ö¸ÏòWordBufµÄÊı¾İÖ¸Õë
-*              BitOffset      Æ«ÒÆµØÖ·
-*              NBits          ĞèÒªÉè¶¨µÄbit¸öÊı
-* Returns    : USHORT         »ñÈ¡µ½µÄÊı¾İÖµ
-* Note(s)    : 1) MB_UtilGetBits() ÓÃÓÚDiscrete »òÊÇ coilsµÄÊı¾İ×ª»¯
+* Description: æ­¤å‡½æ•°ç”¨äºä»WordBufçš„æ•°æ®è¡¨å†…è·å–NBitsä¸ªBits
+* Arguments  : pWordBuf       æŒ‡å‘WordBufçš„æ•°æ®æŒ‡é’ˆ
+*              BitOffset      åç§»åœ°å€
+*              NBits          éœ€è¦è®¾å®šçš„bitä¸ªæ•°
+* Returns    : USHORT         è·å–åˆ°çš„æ•°æ®å€¼
+* Note(s)    : 1) MB_UtilGetBits() ç”¨äºDiscrete æˆ–æ˜¯ coilsçš„æ•°æ®è½¬åŒ–
 *              2) NBits<=16
 ********************************************************************************************************
 */
