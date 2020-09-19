@@ -180,6 +180,20 @@ void  Task(void *p_arg)
 	……
 }
 
+地址配置 - smbbuf.h文件
 
+    #define sMB_HOLDING_START 	                0x1000      //HOLDING起始地址
+    #define sMB_HOLDING_NREGS 	                512  
+    #define sMB_INPUT_START 	                0x9000      //INPUT起始地址
+    #define sMB_INPUT_NREGS 	                16
+    #define sMB_COILS_START 	                0x0500      //COILS起始地址
+    #define sMB_COILS_NREGS 	                64 
+    #define sMB_DISCRETE_START 	                0x0400      //DISCRETE起始地址
+    #define sMB_DISCRETE_NREGS 	                64
+	
+运行示例 配置从机站号为1，读保持寄存器0x1000 开始的6个数据  - tcp模式端口号为7007
+
+[10:29:20.568]发→◇00 00 00 00 00 06 01 03 10 00 00 06 □
+[10:29:20.570]收←◆00 00 00 00 00 0F 01 03 0C 00 00 00 00 00 00 00 00 00 00 00 00 
 
 
