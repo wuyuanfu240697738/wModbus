@@ -28,7 +28,7 @@
 #define MB_ucos                               ( 1 )
 #define MB_rtthread                           ( 2 )
 
-#define MB_EventMutex  MB_ucos
+#define MB_EventMutex  MB_linux
 
 #if (MB_EventMutex ==  MB_linux)
 	#include<pthread.h>
